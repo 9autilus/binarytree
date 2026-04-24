@@ -27,7 +27,7 @@ try:  # pragma: no cover
 except ImportError:  # pragma: no cover
     # noinspection PyProtectedMember
     from graphviz import ExecutableNotFound
-from pkg_resources import get_distribution
+from importlib.metadata import version as get_version
 
 from binarytree.exceptions import (
     NodeIndexError,
@@ -39,7 +39,7 @@ from binarytree.exceptions import (
     TreeHeightError,
 )
 
-__version__ = get_distribution("binarytree").version
+__version__ = get_version("binarytree")
 
 _ATTR_LEFT = "left"
 _ATTR_RIGHT = "right"
